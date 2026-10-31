@@ -1,0 +1,2 @@
+# Alarm design
+Native AlarmActivity uses AlarmWaveView (three rings, 2700 ms cycle) and AlarmPresentation (real incident data, localized copy). Background #15090b, card #211115, stroke #412027, warning #ff586b and primary button/text #f7e9ec. Animation is independent of data refresh, stopped off-screen, and respects disabled system animator scale. No network-health diagnosis is fabricated from the reference image.

@@ -1,0 +1,21 @@
+test_auth_csrf_logout_and_no_default_admin (test_api.API.test_auth_csrf_logout_and_no_default_admin) ... ok
+test_banner_invalid_image_bytes_are_rejected (test_api.API.test_banner_invalid_image_bytes_are_rejected) ... ok
+test_banner_upload_rejects_scripts_and_size (test_api.API.test_banner_upload_rejects_scripts_and_size) ... ok
+test_click_requires_visible_impression_and_lease_owner (test_api.API.test_click_requires_visible_impression_and_lease_owner) ... ok
+test_code_not_executed_on_admin_origin (test_api.API.test_code_not_executed_on_admin_origin) ... ok
+test_concurrent_shared_quota_and_deduplication (test_api.API.test_concurrent_shared_quota_and_deduplication) ... ok
+test_creative_host_cannot_access_admin_or_register (test_api.API.test_creative_host_cannot_access_admin_or_register) ... ok
+test_forget_anonymizes_ad_events (test_api.API.test_forget_anonymizes_ad_events) ... ok
+test_impression_cap_pause_and_expiry (test_api.API.test_impression_cap_pause_and_expiry) ... ok
+test_inactive_notification_retries_after_seen_changes (test_api.API.test_inactive_notification_retries_after_seen_changes) ... ok
+test_notification_delivery_ack_and_open (test_api.API.test_notification_delivery_ack_and_open) ... ok
+test_public_report_has_no_devices_secrets_or_code (test_api.API.test_public_report_has_no_devices_secrets_or_code) ... ok
+test_registration_retry_cannot_take_over (test_api.API.test_registration_retry_cannot_take_over) ... ok
+test_release_requires_verified_media_and_version_match (test_api.API.test_release_requires_verified_media_and_version_match) ... ok
+test_revision_changes_revoke_pending_creatives_and_events (test_api.API.test_revision_changes_revoke_pending_creatives_and_events) ... ok
+test_unknown_media_and_unpublished_apks_not_exposed (test_api.API.test_unknown_media_and_unpublished_apks_not_exposed) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.692s
+
+OK

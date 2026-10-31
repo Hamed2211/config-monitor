@@ -1,0 +1,7 @@
+.gradle/
+**/build/
+local.properties
+signing/
+app/libs/*.aar
+app/src/main/jniLibs/
+node_modules/
