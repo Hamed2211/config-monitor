@@ -1,6 +1,3 @@
-> Current release: **2.3.1 stable**, versionCode **23**. See UPDATE-2.3.1-fa.md. Older notes below are historical.
-
-> Current release: **2.3.0 stable**, versionCode **22**. Automatic server connection to https://panel.configmonitor.top. See UPDATE-2.3.0-fa.md for current behavior and installation. The older version notes below are historical.
 
 # Config Monitor
 
