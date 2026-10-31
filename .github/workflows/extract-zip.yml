@@ -1,0 +1,69 @@
+
+name: Extract ZIP Archive
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Extract ZIP
+        shell: bash
+        env:
+          ZIP_FILE: Config-Monitor-2.3.1-source.zip
+          DEST_DIR: .
+        run: |
+          set -euo pipefail
+
+          if [ ! -f "$ZIP_FILE" ]; then
+            echo "ZIP file not found: $ZIP_FILE"
+            exit 1
+          fi
+
+          mkdir -p "$DEST_DIR"
+
+          # Reject unsafe archive paths
+          python3 - <<'PY'
+          import os, zipfile
+          archive = os.environ["ZIP_FILE"]
+          destination = os.path.realpath(os.environ["DEST_DIR"])
+          with zipfile.ZipFile(archive) as z:
+              for item in z.infolist():
+                  target = os.path.realpath(
+                      os.path.join(destination, item.filename)
+                  )
+                  if not target.startswith(destination + os.sep):
+                      raise ValueError(
+                          f"Unsafe archive entry: {item.filename}"
+                      )
+                  mode = item.external_attr >> 16
+                  if (mode & 0o170000) == 0o120000:
+                      raise ValueError("Symlinks are not allowed")
+          PY
+
+          unzip -oq "$ZIP_FILE" -d "$DEST_DIR"
+
+      - name: Commit extracted files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email \
+            "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add -A
+
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Extract ZIP archive"
+            git push
+          fi
