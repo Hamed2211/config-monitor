@@ -1,9 +1,0 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/widget_root" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:gravity="center_vertical" android:padding="16dp" android:background="@drawable/widget_background">
- <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Config Monitor" android:textColor="#24c98b" android:textSize="17sp" android:textStyle="bold"/>
- <TextView android:id="@+id/widget_status" android:layout_width="match_parent" android:layout_height="wrap_content" android:textColor="#ffffff" android:textSize="14sp" android:layout_marginTop="6dp"/>
- <TextView android:id="@+id/widget_counts" android:layout_width="match_parent" android:layout_height="wrap_content" android:textColor="#a1a5aa" android:textSize="12sp" android:layout_marginTop="4dp"/>
- <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginTop="8dp">
-  <Button android:id="@+id/widget_toggle" android:layout_width="0dp" android:layout_height="48dp" android:layout_weight="1" android:textSize="12sp" android:textColor="#081e19" android:backgroundTint="#24c98b"/>
-  <Button android:id="@+id/widget_open" android:layout_width="0dp" android:layout_height="48dp" android:layout_weight="1" android:textSize="12sp" android:textColor="#ffffff" android:backgroundTint="#191b1d"/>
- </LinearLayout>
-</LinearLayout>

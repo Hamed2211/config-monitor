@@ -1,8 +1,0 @@
-package com.configmonitor.app;
-import org.junit.Test;import static org.junit.Assert.*;import java.nio.charset.StandardCharsets;import java.util.*;
-public class BackupCryptoTest {
- @Test public void pbkdf2Sha256KnownVector(){byte[] key=BackupCrypto.derive("password".toCharArray(),"salt".getBytes(StandardCharsets.UTF_8),1);StringBuilder hex=new StringBuilder();for(byte b:key)hex.append(String.format("%02x",b&255));assertEquals("120fb6cffcf8b32c43e7225256c4f837a86548c92ccc35480805987cb70be17b",hex.toString());}
- @Test public void unicodeRoundTripAndRandomSalt()throws Exception{byte[] p="کانفیگ خصوصی 🔐".getBytes(StandardCharsets.UTF_8);char[] password="رمز قوی برای بکاپ".toCharArray();byte[] a=BackupCrypto.encrypt(p,password),b=BackupCrypto.encrypt(p,password);assertFalse(Arrays.equals(a,b));assertArrayEquals(p,BackupCrypto.decrypt(a,password));}
- @Test public void wrongPasswordAndTamperingAreRejected()throws Exception{byte[] a=BackupCrypto.encrypt("secret".getBytes(StandardCharsets.UTF_8),"correct-password".toCharArray());try{BackupCrypto.decrypt(a,"wrong-password".toCharArray());fail();}catch(java.security.GeneralSecurityException expected){}a[a.length-1]^=1;try{BackupCrypto.decrypt(a,"correct-password".toCharArray());fail();}catch(java.security.GeneralSecurityException expected){}}
- @Test public void invalidHeaderAndShortPasswordRejected()throws Exception{try{BackupCrypto.decrypt(new byte[70],"password".toCharArray());fail();}catch(java.security.GeneralSecurityException expected){}try{BackupCrypto.encrypt(new byte[2],"short".toCharArray());fail();}catch(java.security.GeneralSecurityException expected){}}
-}

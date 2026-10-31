@@ -1,1 +1,0 @@
-PASS: admin UI ↔ real WSGI/SQLite login, empty dashboard, code campaign create/edit/delete, quota report/revocation, notification creation, devices, custom select, connection settings and logout.

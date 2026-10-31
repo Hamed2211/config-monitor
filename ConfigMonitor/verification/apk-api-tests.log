@@ -1,1 +1,0 @@
-PASS: exact bundled HTTPS origin and current UI, backend accepts signed universal 2.1.0-beta1/code19, update offered to beta6/code18 but not 2.1.0-beta1/code19. 64-character installation secret accepted and repeated registration deduplicated. No public server requests performed.
