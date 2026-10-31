@@ -1,0 +1,1 @@
+PASS: both signed 2.1.0-beta1 APKs include BannerFormat, GifBannerView, AdView, Rules and PlatformIdentity. Exact fresh DEX hashes checked by release.py.

@@ -1,0 +1,8 @@
+DB-IP City Lite, October 2026. Copyright DB-IP.com.
+Source: https://db-ip.com/db/download/ip-to-city-lite
+Licensed under Creative Commons Attribution 4.0 International (CC BY 4.0):
+https://creativecommons.org/licenses/by/4.0/
+Android country-ranges.bin.gz is a country-only range index derived from this database.
+Transformation: city names/coordinates removed, adjacent same-country ranges merged.
+Build tool: tools/build_country_ranges.py. App About screen provides attribution.
+Panel footer provides visible attribution to DB-IP. No endorsement is implied.

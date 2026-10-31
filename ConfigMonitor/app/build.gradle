@@ -1,0 +1,28 @@
+plugins { id 'com.android.application' }
+def signingFile = rootProject.file('signing/signing.properties')
+def signingValues = new Properties()
+if (signingFile.exists()) signingFile.withInputStream { signingValues.load(it) }
+android {
+ signingConfigs { localRelease {
+  if (signingFile.exists()) { storeFile rootProject.file('signing/' + signingValues['storeFile']); storePassword signingValues['storePassword']; keyAlias signingValues['keyAlias']; keyPassword signingValues['keyPassword'] }
+ } }
+ namespace 'com.configmonitor.app'
+ compileSdk 35
+ defaultConfig { applicationId 'com.configmonitor.app'; minSdk 24; targetSdk 35; versionCode 23; versionName '2.3.1' }
+ compileOptions { sourceCompatibility JavaVersion.VERSION_17; targetCompatibility JavaVersion.VERSION_17 }
+ androidResources { noCompress += ['wav'] }
+ packaging { jniLibs { useLegacyPackaging true; keepDebugSymbols += ['**/libsingbox.so','**/libgojni.so'] } }
+ buildTypes { release { minifyEnabled false; if (signingFile.exists()) signingConfig signingConfigs.localRelease } }
+ splits { abi { enable true; reset(); include 'arm64-v8a','armeabi-v7a','x86_64','x86'; universalApk true } }
+ testOptions { unitTests.returnDefaultValues=true }
+}
+dependencies {
+ implementation 'org.bouncycastle:bcprov-jdk15to18:1.80'
+ implementation files('libs/libv2ray.aar')
+ implementation 'androidx.core:core:1.15.0'
+ implementation 'androidx.webkit:webkit:1.12.1'
+ implementation 'com.journeyapps:zxing-android-embedded:4.3.0'
+ implementation 'com.google.zxing:core:3.5.3'
+ testImplementation 'junit:junit:4.13.2'
+ testImplementation 'org.json:json:20240303'
+}

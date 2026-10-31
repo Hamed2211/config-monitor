@@ -1,0 +1,31 @@
+[
+  {
+    "path": "app/libs/libv2ray.aar",
+    "url": "https://github.com/2dust/AndroidLibXrayLite/releases/download/v26.6.27/libv2ray.aar",
+    "sha256": "7846eb7f663d1d8ae931034faa7a56cccc82d618c2d029198e6e91a77fd8de1e"
+  },
+  {
+    "path": "app/src/main/jniLibs/arm64-v8a/libsingbox.so",
+    "url": "https://github.com/SagerNet/sing-box/releases/download/v1.14.3/sing-box-1.14.3-android-arm64.tar.gz",
+    "member": "sing-box",
+    "sha256": "64324301d1049474f6010b5a015d3143271a8df83bae83ae8814167ac8f74f5a"
+  },
+  {
+    "path": "app/src/main/jniLibs/armeabi-v7a/libsingbox.so",
+    "url": "https://github.com/SagerNet/sing-box/releases/download/v1.14.3/sing-box-1.14.3-android-arm.tar.gz",
+    "member": "sing-box",
+    "sha256": "3748b66bd4e55ecfda8002fbbcc2051fa43bd20b44f0fb60e2102112a7ea4c01"
+  },
+  {
+    "path": "app/src/main/jniLibs/x86_64/libsingbox.so",
+    "url": "https://github.com/SagerNet/sing-box/releases/download/v1.14.3/sing-box-1.14.3-android-amd64.tar.gz",
+    "member": "sing-box",
+    "sha256": "25f975c79ea43cafdcf91edfa423cda6ed6d412bc82ca880d458cd1e60f490c5"
+  },
+  {
+    "path": "app/src/main/jniLibs/x86/libsingbox.so",
+    "url": "https://github.com/SagerNet/sing-box/releases/download/v1.14.3/sing-box-1.14.3-android-386.tar.gz",
+    "member": "sing-box",
+    "sha256": "c6d8a43a4cae3c6ddf5c7fac0e59de8c9c43e68ff0b3729044c95eca22a1ee56"
+  }
+]
